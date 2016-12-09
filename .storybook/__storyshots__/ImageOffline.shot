@@ -1,0 +1,23 @@
+exports[`broken`] = `
+<img
+  className=""
+  onError={[Function]}
+  src="/images/BROKENmGxer98WQqTudkdWK.jpg"
+  style={undefined} />
+`;
+
+exports[`broken offline`] = `
+<img
+  className=""
+  onError={[Function]}
+  src="/images/BROKENmGxer98WQqTudkdWK.jpg"
+  style={undefined} />
+`;
+
+exports[`offline`] = `
+<img
+  className=""
+  onError={[Function]}
+  src="/images/mGxer98WQqTudkdWK.jpg"
+  style={undefined} />
+`;
