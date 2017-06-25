@@ -1,50 +1,50 @@
-import React, { Component, PropTypes } from 'react';
-import classNames from 'classnames';
-import shallowCompare from 'react-addons-shallow-compare';
+import PropTypes from 'prop-types';
+import React, { PureComponent } from 'react';
 
 /**
  * ImageOffline Component
  */
-
-class ImageOffline extends Component {
+class ImageOffline extends PureComponent {
   static propTypes = {
     /**
-     * The css class name of the root element.
-     */
+      * The css class name of the root element.
+      */
     className: PropTypes.string,
     /**
-     * Offline/local server image filename
-     */
-    localImg: PropTypes.string,
+      * Offline/local server image filename
+      */
+    localImg: PropTypes.string.isRequired,
     /**
-     * Image remote server url
-     */
-    remoteLink: PropTypes.string,
+      * Image remote server url
+      */
+    remoteLink: PropTypes.string.isRequired,
     /**
-     * Override the inline-styles of the root element.
-     */
+      * Override the inline-styles of the root element.
+      */
     style: PropTypes.object,
+  };
+
+  static defaultProps = {
+    className: '',
+    style: {},
   };
 
   state = {
     loadOffline: true,
   };
 
-  shouldComponentUpdate = (nextProps, nextState) => {
-    return shallowCompare(this, nextProps, nextState);
-  }
-
   handleError = () => {
-    this.setState({loadOffline: false});
+    this.setState({ loadOffline: false });
   };
 
   render() {
-    const { className: classNameProp, remoteLink, localImg, style } = this.props;
+    const {
+      className,
+      remoteLink,
+      localImg,
+      style,
+    } = this.props;
     const { loadOffline } = this.state;
-
-    const className = classNames(
-      classNameProp
-    );
 
     const offlineLink = `/images/${localImg}`;
 
@@ -52,15 +52,17 @@ class ImageOffline extends Component {
     if (loadOffline) {
       img = (
         <img
-          src={offlineLink} className={className}
+          className={className}
           onError={this.handleError}
+          src={offlineLink}
           style={style}
         />
       );
     } else {
       img = (
         <img
-          src={remoteLink} className={className}
+          className={className}
+          src={remoteLink}
           style={style}
         />
       );

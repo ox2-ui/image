@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<ImageOffline
+  className=""
+  localImg="mGxer98WQqTudkdWK.jpg"
+  remoteLink="http://imgur.com/h0UFha7.jpg"
+  style={Object {}}
+>
+  <img
+    className=""
+    onError={[Function]}
+    src="/images/mGxer98WQqTudkdWK.jpg"
+    style={Object {}}
+  />
+</ImageOffline>
+`;

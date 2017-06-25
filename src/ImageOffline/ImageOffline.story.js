@@ -1,16 +1,25 @@
 import React from 'react';
-import { storiesOf } from '@kadira/storybook';
+import { storiesOf } from '@storybook/react';
 import ImageOffline from './ImageOffline';
 
 const remoteLink = 'http://imgur.com/h0UFha7.jpg';
 
 storiesOf('ImageOffline', module)
-  .add('offline', () => (
-    <ImageOffline remoteLink={remoteLink} localImg={'mGxer98WQqTudkdWK.jpg'} />
-  ))
-  .add('broken offline', () => (
-    <ImageOffline remoteLink={remoteLink} localImg={'BROKENmGxer98WQqTudkdWK.jpg'} />
-  ))
-  .add('broken', () => (
-    <ImageOffline remoteLink={'broken'} localImg={'BROKENmGxer98WQqTudkdWK.jpg'} />
-  ));
+  .add('offline', () =>
+    <ImageOffline
+      localImg={'mGxer98WQqTudkdWK.jpg'}
+      remoteLink={remoteLink}
+    />,
+  )
+  .add('broken offline', () =>
+    <ImageOffline
+      localImg={'BROKENmGxer98WQqTudkdWK.jpg'}
+      remoteLink={remoteLink}
+    />,
+  )
+  .add('broken', () =>
+    <ImageOffline
+      localImg={'BROKENmGxer98WQqTudkdWK.jpg'}
+      remoteLink={'broken'}
+    />,
+  );
