@@ -1,6 +1,6 @@
 {
   "name": "@ox2/image",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Offline image with remote fallback.",
   "repository": {
     "type": "git",
